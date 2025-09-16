@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+import CartSummary from "../components/CartSummary.jsx";
+---
+<html lang="en">
+  <head>
+    <title>Your Cart | Retro Revival</title>
+  </head>
+  <body class="bg-slate-100 min-h-screen font-sans">
+    <header class="bg-white shadow p-6 mb-8 flex justify-between items-center">
+      <a href="/" class="font-bold text-xl">Retro Revival</a>
+      <nav>
+        <a href="/products" class="hover:underline">Shop</a>
+      </nav>
+    </header>
+    <main class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6">Your Cart</h2>
+      <CartSummary client:load />
+    </main>
+  </body>
+</html>
