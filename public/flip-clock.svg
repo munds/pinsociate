@@ -1,0 +1,10 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="32" fill="#FAF7F2"/>
+    
+    <rect x="84" y="120" width="88" height="42" rx="8" fill="#4B3B2B" stroke="#fff" stroke-width="3"/>
+    <rect x="92" y="126" width="30" height="30" rx="6" fill="#fff"/>
+    <rect x="134" y="126" width="30" height="30" rx="6" fill="#fff"/>
+    <ellipse cx="128" cy="170" rx="24" ry="8" fill="#4B3B2B"/>
+    
+    <text x="128" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#6f6653">Old School Flip Clock</text>
+    </svg>

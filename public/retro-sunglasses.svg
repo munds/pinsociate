@@ -1,0 +1,11 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="32" fill="#FAF7F2"/>
+    
+    <ellipse cx="98" cy="136" rx="22" ry="15" fill="#313155" stroke="#fff" stroke-width="3"/>
+    <ellipse cx="158" cy="136" rx="22" ry="15" fill="#313155" stroke="#fff" stroke-width="3"/>
+    <rect x="119" y="128" width="18" height="16" rx="6" fill="#e3e1d8"/>
+    <line x1="120" y1="143" x2="148" y2="143" stroke="#c1beaa" stroke-width="3"/>
+    <rect x="100" y="155" width="56" height="6" rx="3" fill="#d9d6cd"/>
+    
+    <text x="128" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#6f6653">Retro Sunglasses</text>
+    </svg>

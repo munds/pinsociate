@@ -1,0 +1,13 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="32" fill="#FAF7F2"/>
+    
+    <ellipse cx="128" cy="130" rx="45" ry="45" fill="#eed671" stroke="#958443" stroke-width="6"/>
+    <circle cx="128" cy="130" r="25" fill="#fffdfa" stroke="#beaa81" stroke-width="4"/>
+    <line x1="128" y1="130" x2="151" y2="111" stroke="#beaa81" stroke-width="4"/>
+    <line x1="128" y1="130" x2="128" y2="104" stroke="#ba8c47" stroke-width="4"/>
+    <ellipse cx="97" cy="96" rx="12" ry="7" fill="#dfc472"/>
+    <ellipse cx="160" cy="96" rx="12" ry="7" fill="#dfc472"/>
+    <rect x="122" y="172" width="12" height="14" rx="4" fill="#96815b"/>
+    
+    <text x="128" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#6f6653">Brass Alarm Clock</text>
+    </svg>

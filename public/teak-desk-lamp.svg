@@ -1,0 +1,11 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="32" fill="#FAF7F2"/>
+    
+    <ellipse cx="128" cy="85" rx="54" ry="22" fill="#d0b184"/>
+    <ellipse cx="128" cy="97" rx="44" ry="13" fill="#ffe4bc"/>
+    <rect x="115" y="100" width="26" height="58" rx="9" fill="#aa9e84"/>
+    <rect x="121" y="158" width="14" height="36" rx="7" fill="#be9063"/>
+    <ellipse cx="128" cy="186" rx="24" ry="6" fill="#dbc9a0"/>
+    
+    <text x="128" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#6f6653">Teak Desk Lamp</text>
+    </svg>

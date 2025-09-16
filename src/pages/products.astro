@@ -4,17 +4,23 @@ import ProductList from "../components/ProductList.jsx";
 ---
 <html lang="en">
   <head>
-    <title>Shop Vintage | Retro Revival</title>
+    <title>Shop Vintage | PinPeddler</title>
   </head>
   <body class="bg-slate-100 min-h-screen font-sans">
     <header class="bg-white shadow p-6 mb-8 flex justify-between items-center">
-      <a href="/" class="font-bold text-xl">Retro Revival</a>
+      <a href="/" class="font-bold text-xl">PinPeddler</a>
       <nav>
-        <a href="/cart" class="hover:underline">Cart</a>
+        <a href="/cart" class="hover:text-blue-600 transition" aria-label="View Cart">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="9" cy="21" r="1.5" />
+            <circle cx="18" cy="21" r="1.5" />
+            <path d="M3 6h2l3.6 10.59a1 1 0 0 0 .92.61h7.98a1 1 0 0 0 .92-.62L21 7H6"/>
+          </svg>
+        </a>
       </nav>
     </header>
-    <main class="max-w-3xl mx-auto">
-      <h2 class="text-2xl font-bold mb-6">Shop</h2>
+    <main class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">Shop by Category</h2>
       <ProductList client:load />
     </main>
   </body>

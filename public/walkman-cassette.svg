@@ -1,0 +1,10 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="32" fill="#FAF7F2"/>
+    
+    <rect x="74" y="98" width="100" height="72" rx="15" fill="#3981a3" stroke="#fff" stroke-width="3"/>
+    <rect x="115" y="115" width="26" height="28" rx="6" fill="#fff"/>
+    <circle cx="128" cy="128" r="7" fill="#2a5670"/>
+    <rect x="100" y="175" width="56" height="10" rx="3" fill="#ffe4bc"/>
+    
+    <text x="128" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#6f6653">Walkman Cassette</text>
+    </svg>

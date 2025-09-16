@@ -1,0 +1,12 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="32" fill="#FAF7F2"/>
+    
+    <rect x="39" y="72" width="178" height="112" rx="18" fill="#E9ECEB" stroke="#7B6B55" stroke-width="6"/>
+    <rect x="69" y="108" width="118" height="52" rx="10" fill="#fff"/>
+    <circle cx="90" cy="133" r="13" fill="#C9C6B1"/>
+    <rect x="155" y="120" width="22" height="18" rx="5" fill="#d6deb5"/>
+    <rect x="100" y="174" width="56" height="14" rx="3" fill="#b3b3b3"/>
+    <ellipse cx="80" cy="90" rx="15" ry="8" fill="#89b2c5"/>
+    
+    <text x="128" y="245" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#6f6653">1970s Polaroid Camera</text>
+    </svg>
