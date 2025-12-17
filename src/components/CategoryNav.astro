@@ -1,0 +1,46 @@
+---
+import PRODUCTS from "../data/products";
+
+const { activeCategory } = Astro.props;
+
+const categories = [...new Set(PRODUCTS.map((p) => p.category))];
+const sortedCategories = categories.sort();
+
+const links = [
+    { name: "All", href: "/products", slug: null },
+    ...sortedCategories.map((cat) => {
+        const slug = cat
+            .toLowerCase()
+            .replace(/ & /g, "-")
+            .replace(/\s+/g, "-");
+        return { name: cat, href: `/products/${slug}`, slug };
+    }),
+];
+---
+
+<nav
+    class="flex overflow-x-auto whitespace-nowrap gap-4 mb-8 pb-2 border-b border-gray-200"
+>
+    {
+        links.map((link) => {
+            const isActive =
+                link.name === "All"
+                    ? !activeCategory
+                    : activeCategory === link.name;
+
+            return (
+                <a
+                    href={link.href}
+                    class:list={[
+                        "text-sm font-medium px-4 py-2 rounded-full transition-colors",
+                        isActive
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-600 hover:bg-gray-200 hover:text-gray-900",
+                    ]}
+                >
+                    {link.name}
+                </a>
+            );
+        })
+    }
+</nav>

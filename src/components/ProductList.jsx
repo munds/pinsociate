@@ -1,22 +1,5 @@
 import React, { useState } from "react";
-
-const PRODUCTS = [
-  { id: 1, name: "1970s Polaroid Camera", price: 89.99, image: "/polaroid-camera.svg", category: "Electronics" },
-  { id: 2, name: "Teak Desk Lamp", price: 129.99, image: "/teak-desk-lamp.svg", category: "Home Decor" },
-  { id: 3, name: "Retro Vinyl Record Player", price: 159.99, image: "/retro-record-player.svg", category: "Electronics" },
-  { id: 4, name: "Coca-Cola Sign", price: 59.99, image: "/coca-cola-sign.svg", category: "Collectibles" },
-  { id: 5, name: "Classic Rotary Telephone", price: 39.99, image: "/rotary-telephone.svg", category: "Electronics" },
-  { id: 6, name: "Antique Brass Alarm Clock", price: 72.50, image: "/brass-alarm-clock.svg", category: "Home Decor" },
-  { id: 7, name: "Walkman Cassette Player", price: 78.00, image: "/walkman-cassette.svg", category: "Electronics" },
-  { id: 8, name: "Retro Neon Open Sign", price: 110.00, image: "/neon-open-sign.svg", category: "Collectibles" },
-  { id: 9, name: "Vintage Globe Bar Cart", price: 205.00, image: "/globe-bar-cart.svg", category: "Home Decor" },
-  { id: 10, name: "Classic Typewriter", price: 150.00, image: "/typewriter.svg", category: "Collectibles" },
-  { id: 11, name: "Old School Flip Clock", price: 43.20, image: "/flip-clock.svg", category: "Home Decor" },
-  { id: 12, name: "Retro Sunglasses", price: 18.00, image: "/retro-sunglasses.svg", category: "Accessories" },
-  { id: 13, name: "Messenger Bag", price: 95.00, image: "/messenger-bag.svg", category: "Accessories" },
-  { id: 14, name: "Silver Pocket Watch", price: 60.00, image: "/pocket-watch.svg", category: "Accessories" },
-  { id: 15, name: "Modern Wall Art", price: 130.00, image: "/modern-wall-art.svg", category: "Home Decor" }
-];
+import PRODUCTS from "../data/products";
 
 function getCart() {
   if (typeof window === "undefined") return [];
@@ -35,7 +18,7 @@ function groupByCategory(products) {
   }, {});
 }
 
-export default function ProductList() {
+export default function ProductList({ currentCategory }) {
   const [cart, setCartState] = useState(getCart());
 
   function addToCart(product) {
@@ -45,8 +28,13 @@ export default function ProductList() {
     alert(`${product.name} added to cart!`);
   }
 
-  const groups = groupByCategory(PRODUCTS);
-  const categoryOrder = ["Electronics", "Home Decor", "Collectibles", "Accessories"];
+  // Filter products if a specific category is requested
+  const filteredProducts = currentCategory
+    ? PRODUCTS.filter(p => p.category === currentCategory)
+    : PRODUCTS;
+
+  const groups = groupByCategory(filteredProducts);
+  const categoryOrder = [...new Set(filteredProducts.map(p => p.category))];
 
   return (
     <div>

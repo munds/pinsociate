@@ -1,29 +1,30 @@
 ---
 import "../styles/global.css";
 import ProductList from "../components/ProductList.jsx";
+import CategoryNav from "../components/CategoryNav.astro";
 ---
 
 <html lang="en">
   <head>
     <title>Shop Vintage | Pinsociate, Inc</title>
     <!-- Pinterest Tag -->
-    <script>
+    <!-- <script>
       !(function (e) {
         if (!window.pintrk) {
           window.pintrk = function () {
             window.pintrk.queue.push(Array.prototype.slice.call(arguments));
           };
           var n = window.pintrk;
-          (n.queue = []), (n.version = "3.0");
+          ((n.queue = []), (n.version = "3.0"));
           var t = document.createElement("script");
-          (t.async = !0), (t.src = e);
+          ((t.async = !0), (t.src = e));
           var r = document.getElementsByTagName("script")[0];
           r.parentNode.insertBefore(t, r);
         }
       })("https://s.pinimg.com/ct/core.js");
       pintrk("load", "2614288562699", { em: "<user_email_address>" });
       pintrk("page");
-    </script>
+    </script> -->
     <noscript>
       <img
         height="1"
@@ -62,12 +63,13 @@ import ProductList from "../components/ProductList.jsx";
     </header>
     <main class="max-w-7xl mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Shop by Category</h2>
-      <ProductList client:load />
+      <CategoryNav />
+      <ProductList client:load currentCategory={null} />
     </main>
-    <script>
+    <!-- <script>
       pintrk("track", "pagevisit", {
         event_id: Math.floor(Date.now()),
       });
-    </script>
+    </script> -->
   </body>
 </html>
