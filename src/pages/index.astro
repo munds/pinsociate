@@ -1,48 +1,21 @@
 ---
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
   <head>
     <title>Pinsociate, Inc</title>
     <meta charset="UTF-8" />
-    <meta name="p:domain_verify" content="13a9c5107061f7df560ee01acec3a0aa"/>
-    <!-- Pinterest Tag -->
-    <script>
-      !(function (e) {
-        if (!window.pintrk) {
-          window.pintrk = function () {
-            window.pintrk.queue.push(Array.prototype.slice.call(arguments));
-          };
-          var n = window.pintrk;
-          (n.queue = []), (n.version = "3.0");
-          var t = document.createElement("script");
-          (t.async = !0), (t.src = e);
-          var r = document.getElementsByTagName("script")[0];
-          r.parentNode.insertBefore(t, r);
-        }
-      })("https://s.pinimg.com/ct/core.js");
-      pintrk("load", "2614288562699", { em: "<user_email_address>" });
-      pintrk("page");
-    </script>
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display:none;"
-        alt=""
-        src="https://ct.pinterest.com/v3/?event=init&tid=2614288562699&pd[em]=<hashed_email_address>&noscript=1"
-      />
-    </noscript>
-    <!-- end Pinterest Tag -->
+    <meta name="p:domain_verify" content="13a9c5107061f7df560ee01acec3a0aa" />
   </head>
-  <body class="bg-slate-100 min-h-screen font-sans">
+  <body class="bg-slate-100 min-h-screen font-sans flex flex-col">
     <header class="bg-white shadow px-6 py-4">
       <div>
         <a href="/" class="text-2xl font-bold text-gray-800">Pinsociate, Inc</a>
       </div>
     </header>
-    <main class="max-w-2xl mx-auto text-center mt-24">
+    <main class="max-w-2xl mx-auto text-center mt-24 flex-grow">
       <h2 class="text-3xl font-semibold mb-6">
         Find Your Next Vintage Treasure
       </h2>
@@ -57,5 +30,6 @@ import "../styles/global.css";
         Browse All Products
       </a>
     </main>
+    <Footer />
   </body>
 </html>

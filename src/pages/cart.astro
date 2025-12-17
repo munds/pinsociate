@@ -1,58 +1,24 @@
 ---
 import "../styles/global.css";
 import CartSummary from "../components/CartSummary.jsx";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
   <head>
     <title>Your Cart | Pinsociate, Inc</title>
-    <!-- Pinterest Tag -->
-    <script>
-      !(function (e) {
-        if (!window.pintrk) {
-          window.pintrk = function () {
-            window.pintrk.queue.push(Array.prototype.slice.call(arguments));
-          };
-          var n = window.pintrk;
-          (n.queue = []), (n.version = "3.0");
-          var t = document.createElement("script");
-          (t.async = !0), (t.src = e);
-          var r = document.getElementsByTagName("script")[0];
-          r.parentNode.insertBefore(t, r);
-        }
-      })("https://s.pinimg.com/ct/core.js");
-      pintrk("load", "2614288562699", { em: "<user_email_address>" });
-      pintrk("page");
-    </script>
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display:none;"
-        alt=""
-        src="https://ct.pinterest.com/v3/?event=init&tid=2614288562699&pd[em]=<hashed_email_address>&noscript=1"
-      />
-    </noscript>
-    <!-- end Pinterest Tag -->
   </head>
-  <body class="bg-slate-100 min-h-screen font-sans">
+  <body class="bg-slate-100 min-h-screen font-sans flex flex-col">
     <header class="bg-white shadow p-6 mb-8 flex justify-between items-center">
       <a href="/" class="font-bold text-xl">Pinsociate, Inc</a>
       <nav>
         <a href="/products" class="hover:underline">Products</a>
       </nav>
     </header>
-    <main class="max-w-3xl mx-auto">
+    <main class="max-w-3xl mx-auto flex-grow w-full">
       <h2 class="text-2xl font-bold mb-6">Your Cart</h2>
       <CartSummary client:load />
     </main>
-    <script>
-      pintrk("track", "addtocart", {
-        event_id: Math.floor(Date.now()),
-        value: 100,
-        order_quantity: 1,
-        currency: "USD",
-      });
-    </script>
+    <Footer />
   </body>
 </html>

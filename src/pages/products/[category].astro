@@ -3,6 +3,7 @@ import "../../styles/global.css";
 import ProductList from "../../components/ProductList.jsx";
 import PRODUCTS from "../../data/products";
 import CategoryNav from "../../components/CategoryNav.astro";
+import Footer from "../../components/Footer.astro"; // Import Footer
 
 export async function getStaticPaths() {
     const categories = [...new Set(PRODUCTS.map((p) => p.category))];
@@ -25,38 +26,8 @@ const { categoryName } = Astro.props;
 <html lang="en">
     <head>
         <title>{categoryName} | Pinsociate, Inc</title>
-        <!-- Pinterest Tag -->
-        <!-- <script>
-            !(function (e) {
-                if (!window.pintrk) {
-                    window.pintrk = function () {
-                        window.pintrk.queue.push(
-                            Array.prototype.slice.call(arguments),
-                        );
-                    };
-                    var n = window.pintrk;
-                    ((n.queue = []), (n.version = "3.0"));
-                    var t = document.createElement("script");
-                    ((t.async = !0), (t.src = e));
-                    var r = document.getElementsByTagName("script")[0];
-                    r.parentNode.insertBefore(t, r);
-                }
-            })("https://s.pinimg.com/ct/core.js");
-            pintrk("load", "2614288562699", { em: "<user_email_address>" });
-            pintrk("page");
-        </script> -->
-        <noscript>
-            <img
-                height="1"
-                width="1"
-                style="display:none;"
-                alt=""
-                src="https://ct.pinterest.com/v3/?event=init&tid=2614288562699&pd[em]=<hashed_email_address>&noscript=1"
-            />
-        </noscript>
-        <!-- end Pinterest Tag -->
     </head>
-    <body class="bg-slate-100 min-h-screen font-sans">
+    <body class="bg-slate-100 min-h-screen font-sans flex flex-col">
         <header
             class="bg-white shadow p-6 mb-8 flex justify-between items-center"
         >
@@ -83,15 +54,11 @@ const { categoryName } = Astro.props;
                 </a>
             </nav>
         </header>
-        <main class="max-w-7xl mx-auto">
+        <main class="max-w-7xl mx-auto flex-grow w-full">
             <CategoryNav activeCategory={categoryName} />
             <h2 class="text-3xl font-bold mb-8 text-center">{categoryName}</h2>
             <ProductList client:load currentCategory={categoryName} />
         </main>
-        <!-- <script>
-            pintrk("track", "pagevisit", {
-                event_id: Math.floor(Date.now()),
-            });
-        </script> -->
+        <Footer />
     </body>
 </html>
