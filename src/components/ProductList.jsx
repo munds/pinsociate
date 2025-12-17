@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import PRODUCTS from "../data/products";
-
-function getCart() {
-  if (typeof window === "undefined") return [];
-  return JSON.parse(localStorage.getItem("cart") || "[]");
-}
-
-function setCart(cart) {
-  if (typeof window === "undefined") return;
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
+import { addToCart, getCart } from "../utils/cart";
 
 function groupByCategory(products) {
   return products.reduce((out, product) => {
@@ -21,10 +12,12 @@ function groupByCategory(products) {
 export default function ProductList({ currentCategory }) {
   const [cart, setCartState] = useState(getCart());
 
-  function addToCart(product) {
-    const nextCart = [...cart, product];
+  // Helper to sync local state if needed, though addToCart handles localStorage
+  function handleAddToCart(e, product) {
+    e.preventDefault(); // Prevent navigation if clicking the button
+    e.stopPropagation();
+    const nextCart = addToCart(product);
     setCartState(nextCart);
-    setCart(nextCart);
     alert(`${product.name} added to cart!`);
   }
 
@@ -42,11 +35,15 @@ export default function ProductList({ currentCategory }) {
         groups[category] ? (
           <section className="mb-12" key={category}>
             <h3 className="text-2xl font-bold mb-6 text-gray-800">{category}</h3>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {groups[category]
                 .slice(0, 15) // up to 5 rows per category
                 .map(prod => (
-                  <div className="bg-white rounded p-4 flex flex-col items-center shadow" key={prod.id}>
+                  <a
+                    href={`/product/${prod.id}`}
+                    key={prod.id}
+                    className="block bg-white rounded p-4 flex flex-col items-center shadow hover:shadow-lg transition-shadow"
+                  >
                     <img
                       src={prod.image}
                       alt={prod.name}
@@ -54,14 +51,14 @@ export default function ProductList({ currentCategory }) {
                       style={{ background: "#F8F7F4", borderRadius: 16 }}
                     />
                     <h4 className="text-xl font-semibold text-center">{prod.name}</h4>
-                    <p className="my-2 text-lg">${prod.price.toFixed(2)}</p>
+                    <p className="my-2 text-lg text-gray-600">${prod.price.toFixed(2)}</p>
                     <button
-                      className="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800"
-                      onClick={() => addToCart(prod)}
+                      className="mt-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors z-10 relative"
+                      onClick={(e) => handleAddToCart(e, prod)}
                     >
                       Add to Cart
                     </button>
-                  </div>
+                  </a>
                 ))}
             </div>
           </section>
